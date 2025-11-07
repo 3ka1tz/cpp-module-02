@@ -15,7 +15,6 @@ Fixed& Fixed::operator=(const Fixed& other) {
     if (this != &other) {
         _value = other._value;
     }
-
     return *this;
 }
 
@@ -64,21 +63,18 @@ bool Fixed::operator!=(const Fixed& other) const {
 Fixed Fixed::operator+(const Fixed& other) const {
     Fixed result;
     result.setRawBits(_value + other._value);
-
     return result;
 }
 
 Fixed Fixed::operator-(const Fixed& other) const {
     Fixed result;
     result.setRawBits(_value - other._value);
-
     return result;
 }
 
 Fixed Fixed::operator*(const Fixed& other) const {
     Fixed result;
     result.setRawBits((_value * other._value) >> _fractionalBits);
-
     return result;
 }
 
@@ -89,35 +85,28 @@ Fixed Fixed::operator/(const Fixed& other) const {
 
     Fixed result;
     result.setRawBits((_value << _fractionalBits) / other._value);
-
     return result;
 }
 
 Fixed& Fixed::operator++() {
     _value += 1;
-
     return *this;
 }
 
 Fixed Fixed::operator++(int) {
     Fixed temp = *this;
-
     _value += 1;
-
     return temp;
 }
 
 Fixed& Fixed::operator--() {
     _value -= 1;
-
     return *this;
 }
 
 Fixed Fixed::operator--(int) {
     Fixed temp = *this;
-
     _value -= 1;
-
     return temp;
 }
 
@@ -139,6 +128,5 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
     os << fixed.toFloat();
-
     return os;
 }

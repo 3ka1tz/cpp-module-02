@@ -25,7 +25,6 @@ Fixed& Fixed::operator=(const Fixed& other) {
     if (this != &other) {
         _value = other._value;
     }
-
     return *this;
 }
 
@@ -51,6 +50,5 @@ int Fixed::toInt() const {
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
     os << fixed.toFloat();
-
     return os;
 }

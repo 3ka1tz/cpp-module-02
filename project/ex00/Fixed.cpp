@@ -16,7 +16,6 @@ Fixed& Fixed::operator=(const Fixed& other) {
     if (this != &other) {
         _value = other._value;
     }
-
     return *this;
 }
 
